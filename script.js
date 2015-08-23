@@ -42,6 +42,8 @@ var opts = {
 
 var chart = new xChart('line-dotted', data, '#myChart', opts);
 
+ajaxLoadChart('lol', 'lol')
+
 function ajaxLoadChart(startDate,endDate) {
 
     // If no data is passed (the chart was cleared)
@@ -60,11 +62,9 @@ function ajaxLoadChart(startDate,endDate) {
     }
 
     // Otherwise, issue an AJAX request
-    $.getJSON('evo', {
-
+    $.getJSON('http://localhost:5000/', {
         start:  startDate.format('{yyyy}-{MM}-{dd}'),
         end:    endDate.format('{yyyy}-{MM}-{dd}')
-
     }, function(data) {
 
         var set_ok = [];
