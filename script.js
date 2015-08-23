@@ -78,11 +78,11 @@ function ajaxLoadChart(startDate,endDate) {
 
         $.each(data, function() {
             set_ok.push({
-                x : this.label,
+                x : this.x,
                 y : parseInt(this.value_ok, 10)
             });
             set_error.push({
-                x : this.label,
+                x : this.x,
                 y : parseInt(this.value_error, 10)
             });
         });
