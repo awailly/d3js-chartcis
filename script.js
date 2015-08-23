@@ -43,8 +43,10 @@ var opts = {
 
 var chart = new xChart('line-dotted', data, '#myChart', opts);
 
-var startDate   = Date.create().addDays(-6),    // 6 days ago
-    endDate     = Date.create();                // today
+var startDate   = new Date(),    // 6 days ago
+    endDate     = new Date(startDate);                // today
+
+endDate.setDate(startDate - 6);
 
 ajaxLoadChart(startDate, endDate)
 
