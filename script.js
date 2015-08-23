@@ -69,8 +69,8 @@ function ajaxLoadChart(startDate,endDate) {
 
     // Otherwise, issue an AJAX request
     $.getJSON('http://localhost:5000/', {
-        start:  d3.time.format('%Y-%m-%d')(startDate),
-        end:    d3.time.format('%Y-%m-%d')(endDate)
+        start:  d3.time.format(d3.time.format.iso)(startDate),
+        end:    d3.time.format(d3.time.format.iso)(endDate)
     }, function(data) {
 
         var set_ok = [];
