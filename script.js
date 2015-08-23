@@ -26,6 +26,7 @@ var data = {
              {'x': '2012-11-24T00:00:00', 'y': 18},
              {'x': '2012-11-25T00:00:00', 'y': 8}]}]
 };
+
 var opts = {
   "dataFormatX": function (x) { return new Date(x); },
   "tickFormatX": function (x) { return d3.time.format('%d-%m')(x); },
@@ -42,7 +43,10 @@ var opts = {
 
 var chart = new xChart('line-dotted', data, '#myChart', opts);
 
-ajaxLoadChart('lol', 'lol')
+var startDate   = Date.create().addDays(-6),    // 6 days ago
+    endDate     = Date.create();                // today
+
+ajaxLoadChart(startDate, endDate)
 
 function ajaxLoadChart(startDate,endDate) {
 
